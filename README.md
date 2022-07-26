@@ -1,4 +1,5 @@
 # Minecraft-World-API
+# PROJECT IS IN UNSTABLE TESTING PHASE, USAGE NOT RECOMMENDED.
 
 This straightforward API allows you to see data about the world and players in Minecraft single-player.
 

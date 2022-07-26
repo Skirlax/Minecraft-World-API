@@ -8,13 +8,13 @@ First, you can import the API by doing:
 
 ```python
 from playerapi import PlayerAPI
+player = PlayerAPI()
 ```
 
 You can find what (block or entity) is player looking at by doing:
 
 
 ```python
-player = PlayerAPI()
 looking_at = player.is_looking_at()
 ```
 

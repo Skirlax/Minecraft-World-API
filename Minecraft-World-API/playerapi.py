@@ -42,11 +42,7 @@ class PlayerAPI:
         return nbt_file["Data"]["Player"]
 
     @property
-    def blocks_near(self) -> list:
-        return bl.blocks_near_player(self.player_entity, self.region, self.chunk, "any", radius=15)
-
-    @property
-    def mobs_near(self) -> list:
+    def chunk_mobs(self) -> list:
         return mb.mobs_in_chunk(self.region, self.chunk)
 
     @property
@@ -55,16 +51,18 @@ class PlayerAPI:
 
     def is_looking_at(self) -> str:
 
-        entity = mb.is_looking_at(self.mobs_near, self.player_entity)
+        entity = mb.is_looking_at(self.chunk_mobs, self.player_entity)
         if entity:
             return entity
 
-        for block in self.blocks_near:
+        for block in self.near_blocks:
             if bl.is_looking_at_block(self.player_entity, block, distance=15):
                 return block["name"]
 
         return "minecraft:air"
 
-    @staticmethod
-    def will_fall(chunk_coords: list, region_path: str, player_coords: list, x: bool, z: bool) -> bool:
-        return bl.will_fall(chunk_coords, region_path, player_coords, x, z)
+    def will_fall(self,x: bool, z: bool) -> bool:
+        return bl.will_fall(self.chunk,self._player_path, self.coords, x, z)
+
+    def near_blocks(self, radius=15, block_type="any") -> list:
+        return bl.blocks_near_player(self.player_entity, self.region, self.chunk, block_type, radius)

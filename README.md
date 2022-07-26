@@ -4,39 +4,39 @@ This is a straightforward API that allows you to see data about world and player
 
 # Usage
 
-First, you can import the API by doing:
+First, you can import the API by doing the following:
 
 ```python
 from playerapi import PlayerAPI
 player = PlayerAPI()
 ```
 
-You can find what (block or entity) is player looking at by doing:
+You can find what (block or entity) is player looking at by doing the following:
 
 
 ```python
 looking_at = player.is_looking_at()
 ```
 
-Or if player will fall next move in chosen direction:
+Or if the player will fall next move in chosen direction:
 ```python
 # checking if player will fall on X-axis
 will_fall_x = player.will_fall(True, False)
 # checking if player will fall on Z-axis
 will_fall_z = player.will_fall(False, True)
 ```
-Find items in player's inventory:
+Find items in the player's inventory:
 
 ```python
 inventory = player.inventory
 ```
 
-Get all blocks near player in chosen radius:
+Get all blocks near the player in chosen radius:
 
 ```python
 blocks = player.near_blocks(radius=20)
 ```
-Or if you want a specific block:
+Or, if you want a specific block:
 ```python
 blocks = player.near_blocks(radius=20, block_type="stone")
 ```
@@ -46,7 +46,7 @@ Get all entities in the current chunk:
 mobs_in_chunk = player.chunk_mobs
 ```
 
-And lastly, you can find basic info about player like this:
+And lastly, you can find basic info about the player like this:
 ```python
 rotation = player.rotation
 position = player.coords

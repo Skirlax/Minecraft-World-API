@@ -38,7 +38,7 @@ blocks = player.near_blocks(radius=20)
 ```
 Or if you want a specific block:
 ```python
-blocks = player.near_blocks(radius=15, block_type="stone")
+blocks = player.near_blocks(radius=20, block_type="stone")
 ```
 
 Get all entities in the current chunk:

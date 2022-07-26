@@ -1,6 +1,6 @@
 # Minecraft-World-API
 
-This is a straightforward API that allows you to see data about world and player in Minecraft single-player.
+This straightforward API allows you to see data about the world and players in Minecraft single-player.
 
 # Usage
 
